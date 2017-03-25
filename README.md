@@ -1,9 +1,9 @@
-# Android samples
+# Manual configuration handling
 
-You'll find specific functionalities demonstrated on separate branches.
-The branch names are usually specific, and we will also provide them after their corresponding session.
+This sample describes how the developer can manually handle orientation or other screen changes so the entire view hierarchy is not re-created.
 
-## Sample descriptions
-| Sample | Description |
+## Examples
+| Example | Description |
 | ------------- | ------------- |
-| [Starting Activities](https://github.com/upbsvworkshop/android-samples/tree/starting_activities) | Starting other Activities in various ways. |
+| MainActivity | No configuration change handled. In this case, the VideoView is recreated and the video starts the playback from the beginning (undesired behavior). |
+| SecondActivity | Manifest specifies that this Activity will handle the configuration change on its own, thus the view hierarchy is not recreated (onCreated is not called on every orientation change). Therefore, the video continues to play on every orientation change. |
